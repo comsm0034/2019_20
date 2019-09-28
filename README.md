@@ -19,6 +19,7 @@ Theoretical neuroscience:
 2. Neuronal Dynamics by Wulfram Gerstner, Werner M. Kistler, Richard Naud and Liam Paninski. Full version online.
 3. Introduction To The Theory Of Neural Computation, Volume I by John Hertz. (Classical and accessible book on neural computation)
 4. Bayesian Brain: Probabilistic Approaches to Neural Coding
+5. **Elements of Information Theory by TM Cover and JA Thomas (Wiley)**, worth owning, but there is an online pdf from [www.cs-114.org](http://www.cs-114.org/wp-content/uploads/2015/01/Elements_of_Information_Theory_Elements.pdf "Cover and Thomas pdf")
 
 Machine/statistical Learning:
 
@@ -28,7 +29,7 @@ Machine/statistical Learning:
 4. Reinforcement learning: Reinforcement Learning: An Introduction by Richard S. Sutton and Andrew G. Barto. Full version available online.
 
 **Super useful math/stat cheat-sheet by Iain Murray**:
-https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf
+[homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf](https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf)
 
 
 ### Draft schedule
