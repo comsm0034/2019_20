@@ -2,10 +2,13 @@
 
 Here you can find the relevant content for Information Processing and the Brain 2019/2020. This unit covers several aspects of information processing in the brain, such as sensory processing, probabilistic codes, deep learning, recurrent neural networks, credit assignment, reinforcement learning and model-based inference.
 
-It is jointly taught by Conor Houghton, Rui Ponte Costa at the
+It is jointly taught by Conor Houghton and Rui Ponte Costa at the
 Department of Computer Science [School of Computer Science, Electrical
 and Electronic Engineering, and Engineering Mathematics], Faculty of
 Engineering, University of Bristol.
+
+You should go to the io page for links to the reddit and to the 2018-19 version of this unit:
+[comsm0034.github.io](http://comsm0034.github.io "unit homepage") 
 
 ### Recommended reading:
 
