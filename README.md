@@ -19,9 +19,7 @@ Theoretical neuroscience:
 2. Neuronal Dynamics by Wulfram Gerstner, Werner M. Kistler, Richard Naud and Liam Paninski. Full version online.
 3. Introduction To The Theory Of Neural Computation, Volume I by John Hertz. (Classical and accessible book on neural computation)
 4. Bayesian Brain: Probabilistic Approaches to Neural Coding
-5. **Elements of Information Theory by TM Cover and JA Thomas (Wiley)**, worth owning, but there is an online pdf at 
-
-[staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf]     (http://staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf "Cover and Thomas pdf")
+5. **Elements of Information Theory by TM Cover and JA Thomas (Wiley)**, worth owning, but there is an online pdf from [www.cs-114.org](http://www.cs-114.org/wp-content/uploads/2015/01/Elements_of_Information_Theory_Elements.pdf "Cover and Thomas pdf")
 
 Machine/statistical Learning:
 
