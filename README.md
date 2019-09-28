@@ -21,7 +21,7 @@ Theoretical neuroscience:
 4. Bayesian Brain: Probabilistic Approaches to Neural Coding
 5. **Elements of Information Theory by TM Cover and JA Thomas (Wiley)**, worth owning, but there is an online pdf at 
 
-  [http://staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf]     (staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf "Cover and Thomas pdf")
+[staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf]     (http://staff.ustc.edu.cn/~cgong821/Wiley.Interscience.Elements.of.Information.Theory.Jul.2006.eBook-DDU.pdf "Cover and Thomas pdf")
 
 Machine/statistical Learning:
 
@@ -31,7 +31,7 @@ Machine/statistical Learning:
 4. Reinforcement learning: Reinforcement Learning: An Introduction by Richard S. Sutton and Andrew G. Barto. Full version available online.
 
 **Super useful math/stat cheat-sheet by Iain Murray**:
-https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf
+[homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf](https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf)
 
 
 ### Draft schedule
