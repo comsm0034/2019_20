@@ -12,22 +12,22 @@ You should go to the io page for links to the reddit and to the 2018-19 version 
 
 ### Recommended reading:
 
-This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. However, below we highlight with ** the most relevant ones for this unit.
+This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. However, below we highlight **in bold** the most relevant ones for this unit.
 Theoretical neuroscience:
 
-    ** Theoretical Neuroscience by P Dayan and L F Abbott (MIT Press 2001), see also errata.
-    Neuronal Dynamics by Wulfram Gerstner, Werner M. Kistler, Richard Naud and Liam Paninski. Full version online.
-    Introduction To The Theory Of Neural Computation, Volume I by John Hertz. (Classical and accessible book on neural computation)
-    Bayesian Brain: Probabilistic Approaches to Neural Coding
+1. **Theoretical Neuroscience by P Dayan and L F Abbott (MIT Press 2001)**, see also errata.
+2. Neuronal Dynamics by Wulfram Gerstner, Werner M. Kistler, Richard Naud and Liam Paninski. Full version online.
+3. Introduction To The Theory Of Neural Computation, Volume I by John Hertz. (Classical and accessible book on neural computation)
+4. Bayesian Brain: Probabilistic Approaches to Neural Coding
 
 Machine/statistical Learning:
 
-    ** General ML book: Information Theory, Inference and Learning Algorithms by David MacKay. Full version available online
-    ** Deep Learning (including Recurrent neural nets): Deep Learning by Ian Goodfellow, Yoshua Bengio and Aaron Courville
-    Unsupervised learning: Natural Image Statistics by Aapo Hyvarinen, Jarmo Hurri, and Patrik O. Hoyer. Full version available online.
-    Reinforcement learning: Reinforcement Learning: An Introduction by Richard S. Sutton and Andrew G. Barto. Full version available online.
+1. General ML book: Information Theory, Inference and Learning Algorithms by David MacKay. Full version available online
+2. **Deep Learning (including Recurrent neural nets): Deep Learning by Ian Goodfellow, Yoshua Bengio and Aaron Courville**
+3. Unsupervised learning: Natural Image Statistics by Aapo Hyvarinen, Jarmo Hurri, and Patrik O. Hoyer. Full version available online.
+4. Reinforcement learning: Reinforcement Learning: An Introduction by Richard S. Sutton and Andrew G. Barto. Full version available online.
 
-** Super useful math/stat cheat-sheet by Iain Murray:
+**Super useful math/stat cheat-sheet by Iain Murray**:
 https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf
 
 
@@ -35,28 +35,28 @@ https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf
 
 #### Conor:
 
-Lecture 1-3: Information theory
-Lecture 4-5: Statistical theory
-Lecture 6-9: Probabilistic brain
+* Lecture 1-3: Information theory
+* Lecture 4-5: Statistical theory
+* Lecture 6-9: Probabilistic brain
 
 #### Guest lecturer:
 
-Lecture 10: Laurence?
+* Lecture 10: Laurence?
 
 #### Rui: Neural circuits and learning
 
-Lecture 10: Different forms of learning (1,4)
-Lecture 11-12: Visual System: conv nets and backprop (5,6)
-Lecture 13-14: Supervised learning (1,4)
-Lecture 15: Sparse coding and autoencoders (5,6)
-Lecture 16: Reinforcement Learning: TD-learning, Q-Learning, Deep RL (1,7)
-Lecture 17-18: Auditory cortex, Recurrent neural networks, gated RNNs (1,4)
+* Lecture 10: Different forms of learning (1,4)
+* Lecture 11-12: Visual System: conv nets and backprop (5,6)
+* Lecture 13-14: Supervised learning (1,4)
+* Lecture 15: Sparse coding and autoencoders (5,6)
+* Lecture 16: Reinforcement Learning: TD-learning, Q-Learning, Deep RL (1,7)
+* Lecture 17-18: Auditory cortex, Recurrent neural networks, gated RNNs (1,4)
 
 #### Cian:
 
-Lecture 19-20: Neural Data Analysis
+* Lecture 19-20: Neural Data Analysis
 
 #### Revision week:
 
-Lecture 21: Conor's revision
-Lecture 22: Rui/Cian revision
+* Lecture 21: Conor's revision
+* Lecture 22: Rui/Cian revision
