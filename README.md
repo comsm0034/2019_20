@@ -7,7 +7,7 @@ Department of Computer Science [School of Computer Science, Electrical
 and Electronic Engineering, and Engineering Mathematics], Faculty of
 Engineering, University of Bristol.
 
-# Recommended reading:
+### Recommended reading:
 
 This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. However, below we highlight with ** the most relevant ones for this unit.
 Theoretical neuroscience:
@@ -28,18 +28,19 @@ Machine/statistical Learning:
 https://homepages.inf.ed.ac.uk/imurray2/pub/cribsheet.pdf
 
 
-# Draft schedule
+### Draft schedule
 
-Conor:
+#### Conor:
 
 Lecture 1-3: Information theory
 Lecture 4-5: Statistical theory
 Lecture 6-9: Probabilistic brain
 
-Lecture 10: Guest lecture [Laurence?]
+#### Guest lecturer:
 
- 
-Rui: Neural circuits and learning
+Lecture 10: Laurence?
+
+#### Rui: Neural circuits and learning
 
 Lecture 10: Different forms of learning (1,4)
 Lecture 11-12: Visual System: conv nets and backprop (5,6)
@@ -48,13 +49,11 @@ Lecture 15: Sparse coding and autoencoders (5,6)
 Lecture 16: Reinforcement Learning: TD-learning, Q-Learning, Deep RL (1,7)
 Lecture 17-18: Auditory cortex, Recurrent neural networks, gated RNNs (1,4)
 
-Cian:
+#### Cian:
 
 Lecture 19-20: Neural Data Analysis
 
- 
-
-Revision week:
+#### Revision week:
 
 Lecture 21: Conor's revision
 Lecture 22: Rui/Cian revision
