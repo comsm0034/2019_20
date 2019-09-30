@@ -43,7 +43,7 @@ Machine/statistical Learning:
 
 #### Guest lecturer:
 
-* Lecture 10: Laurence?
+* Lecture 10: Guest lecture on the probabilistic brain (Laurence Aitchison)
 
 #### Rui: Neural circuits and learning
 
