@@ -12,7 +12,7 @@ You should go to the io page for links to the reddit and to the 2018-19 version 
 
 ### Recommended reading:
 
-This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. However, below we highlight **in bold** the most relevant ones for this unit.
+This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. Relevant research papers will be highlighted during the lectures. However, below we highlight **in bold** the most relevant ones for this unit.
 
 Theoretical neuroscience:
 
