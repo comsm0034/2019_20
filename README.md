@@ -13,6 +13,7 @@ You should go to the io page for links to the reddit and to the 2018-19 version 
 ### Recommended reading:
 
 This field is highlight interdisciplinary, as such there is no single textbook that covers all our lectures. However, below we highlight **in bold** the most relevant ones for this unit.
+
 Theoretical neuroscience:
 
 1. **Theoretical Neuroscience by P Dayan and L F Abbott (MIT Press 2001)**, see also errata.
@@ -36,9 +37,9 @@ Machine/statistical Learning:
 
 #### Conor:
 
-* Lecture 1-3: Information theory
-* Lecture 4-5: Statistical theory
-* Lecture 6-9: Probabilistic brain
+* Lectures 1-3: Information theory
+* Lectures 4-5: Statistical theory
+* Lectures 6-9: Probabilistic brain
 
 #### Guest lecturer:
 
@@ -46,16 +47,16 @@ Machine/statistical Learning:
 
 #### Rui: Neural circuits and learning
 
-* Lecture 10: Different forms of learning (1,4)
-* Lecture 11-12: Visual System: conv nets and backprop (5,6)
-* Lecture 13-14: Supervised learning (1,4)
-* Lecture 15: Sparse coding and autoencoders (5,6)
-* Lecture 16: Reinforcement Learning: TD-learning, Q-Learning, Deep RL (1,7)
-* Lecture 17-18: Auditory cortex, Recurrent neural networks, gated RNNs (1,4)
+* Lecture 11: Different forms of learning (1,4)
+* Lectures 12-13: Visual System: conv nets (5,6)
+* Lecture 14: Supervised learning (1,4)
+* Lecture 15: Unsupervised learning (5,6)
+* Lecture 16: Reinforcement Learning (1,7)
+* Lectures 17-18: Recurrent neural networks (1,4)
 
 #### Cian:
 
-* Lecture 19-20: Neural Data Analysis
+* Lectures 19-20: Neural Data Analysis
 
 #### Revision week:
 
