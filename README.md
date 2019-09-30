@@ -62,3 +62,8 @@ Machine/statistical Learning:
 
 * Lecture 21: Conor's revision
 * Lecture 22: Rui/Cian revision
+
+#### Coursework:
+
+* CW1: Problem sheet on probabilities
+* CW2: Coursework on learning
