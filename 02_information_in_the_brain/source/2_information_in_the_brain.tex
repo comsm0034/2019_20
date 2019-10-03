@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, epsfig}
+\usepackage[authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{\texttt{comsm0021.github.io}}
+\lhead{Neural Information Processing - 2\_information\_in\_the\_brain - Conor}
+\rhead{\thepage}
+\cfoot{}
+\begin{document}
+
+\section*{Information in the brain} 
+
+We will look at two applications of information theory to the study of
+the brain; the first, dealt with here is calculating the information
+content of spike trains. This is a example of data analysis for
+interpreting experimental data in neuroscience. The second, infomax,
+is an interpretation of information processing in the brain, which may
+have something to tell us about how to compute with data; this will be
+in the next chapter.
+
+\subsection*{The information content of spike trains}
+
+Neurons communicate using action potentials, discrete voltage spikes
+that travel from neuron to neuron. This is the main way information
+propagates through the brain. The action potentials, often also called
+spikes, a stereotypical in amplitude, so the information that carry is
+represented in their timing. Spike trains are very noisy, repeated
+responses to the same stimulus tend to be very different; for example,
+in Fig.~\ref{fig_zebra_finch} there are raster plots from neurons in
+the auditory area of the zebra finch brain; a raster plot is a plot
+with a little dash for each spike. The individual trials run
+horizontally. As you can see there is considerable variation from
+trial to trial. This variability is unsurprising, the brain is made up
+of multiple interlocking ad hoc networks so there is likely to be
+considerable background noise. The question is then, how much
+information do spike trains carry.
+
+\begin{figure}[htb]
+\begin{center}
+\include{raster}
+\end{center}
+\caption{The response of cells in the auditory fore brain of zebra
+  finch to a conspecific song stimulus. \textbf{A} shows the sonogram
+  for the song; \textbf{B}, \textbf{C} and \textbf{D} show rasterplots
+  for three responses, each one second long. For each cell there are
+  ten trials, stacked vertically, with each horizonal line
+  corresponding to a single trial. Each small dash is a single
+  spike.\label{fig_zebra_finch}}
+\end{figure}
+
+An attempt to answer this question is found in
+\cite{StrongEtAl1998}. They consider the response of the large
+movement sensitive \lq{}H1\rq{} neurons at the back of the brain of
+blowfly. They recorded from these neurons for some time while the fly
+was shown a moving stimulus. They then discretized the spike trains,
+binning them into small time bins, as in
+Fig.~\ref{fig_discretization}. If the time bins are chosen small
+enough, this is a sequence of zeros and ones. The sequence of zeros
+and ones can then be split into a sequence of words
+\begin{equation}
+010001000000100\rightarrow 01000,10000,00100
+\end{equation}
+There words can be considered a set of outcomes for a random variable:
+\begin{eqnarray}
+\textbf{w}_0&=&(0,0,0,0,0)\cr
+\textbf{w}_1&=&(0,0,0,0,1)\cr
+\textbf{w}_2&=&(0,0,0,1,0)\cr
+\textbf{w}_3&=&(0,0,0,1,1)\cr
+&&\ldots
+\end{eqnarray}
+
+\begin{figure}[htb]
+\begin{center}
+\include{discretization}
+\end{center}
+\caption{Discretization: the spike train is changed into a series of
+  zeros and ones by binning then using a small time
+  step.\label{fig_discretization}}
+\end{figure}
+
+Now the idea is to calculate the mutual input between the
+$\textbf{w}_i$s and the stimulus. To this end they recorded two cases,
+in the first they varied the input for some time, allowing them to
+calculate $H(W)$; in the second they repeated the same stimulus
+sequence many times, allowing them to calculate $H(W|S)$; $S$
+represents the stimulus. In practice this means that they played the
+same movement sequence many times. This movement sequence is split up
+into 30 ms sections, each section counts as one stimulus, say $s$
+represents on of these stimuli. It is possible to calculate
+$p_{S|W}(W|S=s)$ by counting the occurance of each word during the
+repititions of $s$. From this $H(W|S=s)$ is calculated. Now, under the
+assumption that each stimulus is equally likely, this is averaged over
+the stimuli to give $H(W|S)$. A similar procedure using the
+non-repeating stimulus give $H(W)$ and from the difference comes
+$I(W;S)$.
+
+One question is how to decide how small to make the discretization
+time and how long to make the words. It is argued that the blowfly
+responds very quickly to attempts to swat it, so the information
+coming from H1 is being interpreted by other brain areas over a time
+scale of 30 ms. The discretization size is $\delta t=3$ ms. In
+\cite{StrongEtAl1998} they report $78\pm 5$ bits per second, which,
+given the firing rate, equates to $1.8\pm 0.1$ bits per
+spike. 
+
+Obviously one interesting question is how the mutual information
+varies with $\delta t$, the discretization size; if it increases as
+$\delta t$ decreases, this indicates timings carry information at
+smaller time scales. The problem is that the smaller $\delta t$, the
+more words there are; with $\delta t=1$ ms there are $2^{30}$, about a
+billion different words. Another approach is to preturb the spike
+train, for example by jittering the spike times. Looking at how this
+changes the mutual information tells us how information is coded in
+the spike trains.
+
+The difficulty with this approach to the information content of spike
+trains is the huge number of words: with 30 ms words and 3 ms letters
+there are $2^{10}=1024$ words. If six seconds of data are used for the
+repeating stimulus, that is 100 different stimuli, then even for a
+three hour recording there are 1800 trails for each stimulus, not a
+huge amount for estimating 1024 probabilities. Thus means that it
+would take a lot of data to reliably estimate the probabilities needed
+to calculate the mutual information. Of course, in the case of blowfly
+considerable amounts of data are available and the quick reaction time
+also makes the restriction to 30 ms words reasonable, but the size of
+data set does present a challenge. There are clever ways to improve
+this situation; already in \cite{StrongEtAl1998} they look at how the
+estimate varies with the amount of data and then extrapolate. In
+\cite{NemenmanEtAl2004} the estimation of probability from counting is
+improved in a way that improves the estimate for mutual information. I
+also look at this problem in \cite{Houghton2015,Houghton2018}
+
+\bibliographystyle{apa}
+\bibliography{../../source/bibliography}{}
+
+
+\end{document}
+
