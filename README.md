@@ -48,11 +48,12 @@ Machine/statistical Learning:
 #### Rui (weeks 6-10): Neural circuits and learning
 
 * Lecture 11: Different forms of learning (1,4)
-* Lectures 12-13: Visual System: conv nets (5,6)
-* Lecture 14: Supervised learning (1,4)
-* Lecture 15: Unsupervised learning (5,6)
-* Lecture 16: Reinforcement Learning (1,7)
-* Lectures 17-18: Recurrent neural networks (1,4)
+* Lectures 12: Visual System: deep learning? (5,6)
+* Lecture 13: Supervised learning and backprop (1,4)
+* Lecture 14: Unsupervised learning (5,6)
+* Lecture 15: Reinforcement Learning (1,7)
+* Lectures 16-17: Recurrent neural networks (1,4)
+* Lecture 18: Brain vs machine: meta-learning and inductive bias (1,4)
 
 Note: Labs for CW2 on weeks 7 and 10 will start with lecture in the first hour.
 
