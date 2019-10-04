@@ -66,4 +66,4 @@ Machine/statistical Learning:
 #### Coursework:
 
 * CW1: Problem sheet on probabilities
-* CW2: Coursework on learning
+* CW2: Coursework on learning (labs on 12/11 and 03/12)
