@@ -35,17 +35,17 @@ Machine/statistical Learning:
 
 ### Draft schedule
 
-#### Conor:
+#### Conor (weeks 1-5):
 
 * Lectures 1-3: Information theory
 * Lectures 4-5: Statistical theory
 * Lectures 6-9: Probabilistic brain
 
-#### Guest lecturer:
+#### Guest lecturer (week 5):
 
 * Lecture 10: Guest lecture on the probabilistic brain (Laurence Aitchison)
 
-#### Rui: Neural circuits and learning
+#### Rui (weeks 6-10): Neural circuits and learning
 
 * Lecture 11: Different forms of learning (1,4)
 * Lectures 12-13: Visual System: conv nets (5,6)
@@ -54,7 +54,9 @@ Machine/statistical Learning:
 * Lecture 16: Reinforcement Learning (1,7)
 * Lectures 17-18: Recurrent neural networks (1,4)
 
-#### Cian:
+Note: Labs for CW2 on weeks 7 and 10 will start with lecture in the first hour.
+
+#### Cian (week 11):
 
 * Lectures 19-20: Neural Data Analysis
 
@@ -66,4 +68,4 @@ Machine/statistical Learning:
 #### Coursework:
 
 * CW1: Problem sheet on probabilities
-* CW2: Coursework on learning (labs on 12/11 and 03/12)
+* CW2: Coursework on learning (labs on week 7 (12/11) and week 10 (03/12))
