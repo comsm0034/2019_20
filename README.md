@@ -48,7 +48,7 @@ Machine/statistical Learning:
 #### Rui (weeks 6-10): Neural circuits and learning
 
 * Lecture 11: Different forms of learning (1,4)
-* Lectures 12: Visual System: deep learning? (5,6)
+* Lecture 12: Visual System: deep learning? (5,6)
 * Lecture 13: Supervised learning and backprop (1,4)
 * Lecture 14: Unsupervised learning (5,6)
 * Lecture 15: Reinforcement Learning (1,7)
