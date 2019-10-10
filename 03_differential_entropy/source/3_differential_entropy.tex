@@ -26,10 +26,60 @@ $h$ for the differential entropy.
 
 Lets consider the uniform distribution:
 \begin{equation}
-  p(x)=\le
+  p(x)=\left\{\begin{array}{ll}1/a&x\in [0,a]\\0&\mbox{otherwise}\end{array}\right.
 \end{equation}
+It is easy to calculate the entropy to find
+\begin{equation}
+  h(X)=\log{a}
+\end{equation}
+This immeadiately demonstrates a difference between differetial
+entropy and the entropy we looked at before for the discrete variable:
+if $a<1$ then $h(X)<0$ and so the differential entropy isn't always
+positive.
 
+In fact, our previous notion of entropy, based on the source coding
+theorem, that it quantifies the amount of information in a signal,
+does not work here since a real number, if written to infinite
+precision, contains infinite information. Of course, in practice, if a
+real values signal is used to communicate information there will be
+imprecision in both the encode and decoding, limiting the amount of
+information that can be carried by signal from the person encode the
+data to the person decoding it and so it is still useful to study
+continuous signals using the tooks of information theory.
 
+After the uniform distribution the first continuous distribution you
+think of is probably the Gaussian distribution
+\begin{equation}
+  p(x)=\frac{1}{\sqrt{2\pi \sigma^22}}exp\left(\frac{-x^2}{2\sigma^2}\right)
+\end{equation}
+Working out $h(X)$ is straightforward once you substitute and use integration by parts you find
+\begin{equation}
+  h(X)=\frac{1}{2}\log{2\pi e \sigma^2}
+\end{equation}
+where the $e$ is just the exponential $\exp{(1)}$. As with the uniform
+distribution, this formula can give a positive or negative number
+depending on the size of $\sigma$.
+
+\subsection*{Relationship between the continuous and descrete entropy}
+
+Given a continuous random variable $p(x)$ over some variable $x$
+consider what happens if we discretize $x$ into intervals of width
+$\delta x$ so, say $x_n$ represents the interval $[x_{n-1},x_n]$. Now
+we can use $p(x)$ to define a discrete random variable
+\begin{equation}
+  p_x=\int_{x_{n-1}}^{x_n}p(x)dx
+\end{equation}
+so $p_n$ is the probability the outcome, according to $p(x)$, lies in the $n$-interval. Now, assuming $p(x)$ is continuous we know we can always pick a value of $x_i\in[x_{n-1},x_n]$$ such that
+\begin{equation}
+  p(x_i)\delta x=\int_{x_{n-1}}^{x_n}p(x)dx
+  \begin{equation}
+This is an appliation of the mean value theorem which says that for a
+continous function over an interval, there is point in the interval so
+that the value of the function is equal to its average. Roughly
+speaking, generally the average is neither the lowest nor the highest
+value that function takes over the interval, so pick a point, say $a$ where the
+function is lower than its average, and a point, $b$ where it is higher; since the function is continuous as we move from $a$ to $b$ we mist 
+   
 
 
 
