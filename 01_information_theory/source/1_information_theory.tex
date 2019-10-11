@@ -37,13 +37,13 @@ the application form. Now, your grade isn't random, there might be a
 random element, but it is also the result of your ability to do well
 in exams. Furthermore, your potential employer is interested in your
 grade precisely because it isn't random, some employers, perhaps not
-to the degree you imagine, think is related to your ability to perform
+to the degree you imagine, think it is related to your ability to perform
 in the role they are offering. However, until they read what you have
 written they do not know your grade and so, to them, it is like
 performing a random experiment and it can be modelled using a random
 variable.
 
-In fact, most situation we use a random variable for are like this;
+In fact, most situations we use a random variable for are like this;
 the variable models something we don't know rather than something that
 is truly random. The example of a coin flip often used when describing
 random variables is misleading.
@@ -129,13 +129,13 @@ In this definition $p\log_2{p}=0$ when $p=0$; this makes sense since
 \end{equation}
 
 
-The first thing to note about this definition is that is works for any
+The first thing to note about this definition is that it works for any
 sample space. Many quantities in statistics rely on the sample space
-having some sort of structure, for example the mean of distribution@
+having some sort of structure, for example the mean of a distribution
 \begin{equation}
 \langle x\rangle = \sum_{x_i\in \mathcal{X}}{p_X(x_i)x_i}
 \end{equation}
-only works if it makes sense to multiple the $x_i$ by real number and
+only works if it makes sense to multiply the $x_i$ by real numbers and
 add them to each other. In other words, it assumes the sample space is
 a vector space. Not all sample spaces are vector spaces: if we were
 looking at fruit purchased in a supermarket, the average fruit would
@@ -152,7 +152,11 @@ quantification of information; for example
 \begin{equation}
 H(X)\ge 0
 \end{equation}
+<<<<<<< HEAD
 This follows from $0\ge p_X(x_i)\le 1$ so $\log_2{p_X(x_i)}$ is never
+=======
+This follows from $0\le p_X(x_i)\le 1$ so $\log_2{p_X(x_i)}$ is never
+>>>>>>> d415215684e416e4ae91ef2e4969ce5a25819698
 positive. Furthermore, it is easy to check that if all the events are equally likely:
 \begin{equation}
 p(x_i)=\frac{1}{\#(\mathcal{X})}
@@ -170,7 +174,7 @@ likely. This is good; the most informative an experiment can be is
 when we have no idea before the experiment what the outcome will be,
 in other words, when all the outcomes are equally likely. Conversely
 if $p_X(x_k)=1$ for one outcome and $p_X(x_i)=0$ otherwise, that is for
-all $i\not=j$, then substituting in to the formula we see that
+all $i\not=k$, then substituting in to the formula we see that
 $H(X)=0$; this is what we want, we know in advance the outcome of the
 experiment would be $x_k$ so the experiment itself provides no
 information. If there are two outcomes, $a$ and $b$ with $p(a)=p$ and
@@ -219,8 +223,8 @@ eighth of the time. Now, consider this dictionary
 0&10&110&111
 \end{tabular}
 \end{center}
-Here, the sequence \texttt{AABC} become 010110110, this can be split up into 0
-10 110 110 because the code word 0 is the only code word beginning
+Here, the sequence \texttt{AABC} becomes 0010110, this can be split up into 0
+0 10 110 because the code word 0 is the only code word beginning
 with 0 and the code word 10 is the only one beginning with 10. Now,
 some of the code words are longer than two, but, since \texttt{A} occurs half
 the time and has a code word of length one, \texttt{B} occurs a quarter the
@@ -242,7 +246,7 @@ most efficient code will attain or nearly attain its limit.
 
 Finally, to return to the exam grade example. The distribution we looked at has
 \begin{equation}
-H(X)=-0.684\log_2{.684}-0.386\log_2{0.159}=1.4
+H(X)=-0.684\log_2{0.684}-0.386\log_2{0.159}=1.4
 \end{equation}
 If, instead, the division between the grades were arranged so that an equal number of people got a first, second and third then the probability would be 
 \begin{equation}
@@ -255,8 +259,13 @@ H(X)=-\log_2\frac{1}{3}=1.58
 So, on average the employer would attain 0.18 bits of information if
 grade boundaries were chosen so that each grade was equally
 common. However, of course, this might not be the information the
+<<<<<<< HEAD
 employer wants, maybe the specifically want to employ someone with a
 grade in the lowers $16\%$, maybe they think these people are more
+=======
+employer wants, maybe they specifically want to employ someone with a
+grade in the lower $16\%$, maybe they think these people are more
+>>>>>>> d415215684e416e4ae91ef2e4969ce5a25819698
 creative. In this situation the new system would be worse, they may
 gain more information, but not the specific piece of information they
 need!
@@ -266,7 +275,7 @@ need!
 Typically we want to use information theory to study the relationship
 between two random variables. The object which quantifies this is
 mutual information. However, before discussing mutual information it
-is useful to consider conditional entropy. Given two random variable
+is useful to consider conditional entropy. Given two random variables
 $X$ and $Y$ the probability of getting the pair $(x,y)$ is given by
 the \textbf{joint probability} $p_{(X,Y)}(x,y)$. The \textbf{joint
   entropy} is just the entropy of the joint distribution:
@@ -408,7 +417,7 @@ that $H(X)\ge H(X|Y)$.
 The mutual information is a powerful object; it determines the
 relatedness of random variables irrespective of how the variables are
 related. It is useful to compare it to the correlation; correlation is
-often used to measure how related to variables are:
+often used to measure how related two variables are:
 \begin{equation}
 \mbox{corr}(X,Y)=\frac{\langle (X-\mu_X)(Y-\mu_Y)\rangle}{\sigma_X\sigma_Y}
 \end{equation}
@@ -432,7 +441,7 @@ mutual information can be difficult to estimate accurately.
 A Markov chain is a triplet of random variables $X$, $Y$ and $Z$
 where, roughly speaking $Z$ only learns about $X$ through $Y$; it isn't
 that $X$ and $Z$ are independent, just that if you know the value of
-$Y$ knowing the value of $X$ wouldn't tell you anything more. A game of
+$Y$ knowing the value of $X$ wouldn't tell you anything more about $Z$. A game of
 snakes and ladders is an example: your game position after three goes
 is $Z$ in this story, after two goes is $Y$ and after one is $X$. Now
 $Z$ depends on $X$, if you went up a ladder in your first go you are
