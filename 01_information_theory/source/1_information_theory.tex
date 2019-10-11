@@ -152,7 +152,7 @@ quantification of information; for example
 \begin{equation}
 H(X)\ge 0
 \end{equation}
-This follow from $0\ge p_X(x_i)\le 1$ so $\log_2{p_X(x_i)}$ is never
+This follows from $0\ge p_X(x_i)\le 1$ so $\log_2{p_X(x_i)}$ is never
 positive. Furthermore, it is easy to check that if all the events are equally likely:
 \begin{equation}
 p(x_i)=\frac{1}{\#(\mathcal{X})}
@@ -231,7 +231,7 @@ length for each letter is $0.5\times 1 +0.25\times 2 + 0.125\times 3 +
 \begin{equation}
 H(X)=-0.5\log_2(0.5)-0.25\log_2(0.25)-0.250\log_2(0.125)=1.75
 \end{equation}
-In fact, there source coding theorem shows that the entropy $H(X)$ is
+In fact, the source coding theorem shows that the entropy $H(X)$ is
 a lower bound on the average length of a message using the most
 efficient code; it is a limit on the compressibility of the
 data. Here, the code attains the bound, but this works because the
@@ -256,7 +256,7 @@ So, on average the employer would attain 0.18 bits of information if
 grade boundaries were chosen so that each grade was equally
 common. However, of course, this might not be the information the
 employer wants, maybe the specifically want to employ someone with a
-grade in the lowers $16\%$, maybe they thing these people are more
+grade in the lowers $16\%$, maybe they think these people are more
 creative. In this situation the new system would be worse, they may
 gain more information, but not the specific piece of information they
 need!
@@ -339,7 +339,7 @@ H(X|Y=y_0)=1
 \end{equation}
 On the other hand $p_{X|Y}(x_0|Y=y_1)=1$ but $p_{X|Y}(x_1|Y=y_1)=0$ so
 \begin{equation}
-H(X|y=y_1)=0
+H(X|Y=y_1)=0
 \end{equation}
 and
 \begin{equation}
@@ -385,7 +385,7 @@ Thus, it is the amount of information in $X$ and $Y$ considered
 separately, minus the amount of information in them considered
 together. If the two distributions are independent, then $I(X,Y)=0$
 since $H(X,Y)=H(X)+H(Y)$: this follows from the chain rule, since
-$H(Y|X)=H(X)$ when $X$ and $Y$ are independent. Conversely, if $Y$ is
+$H(Y|X)=H(Y)$ when $X$ and $Y$ are independent. Conversely, if $Y$ is
 determined by $X$ then $H(Y|X)=0$ and $H(X,Y)=H(X)$ and $I(X,Y)=H(Y)$.
 
 Combining the mutual information and the chain rule give two other expressions
@@ -423,9 +423,9 @@ probability a quarter each, and zero with probability a half. Now
 \begin{equation}
 \langle (X-\mu_X)(Y-\mu_Y)\rangle=\frac{1}{4}(-1)\frac{1}{2}+\frac{1}{4}\frac{1}{2}=0
 \end{equation}
-even though the variables are completely dependent. $I(X,Y)=0$. For
-real data, however, the mutual information can be difficult to
-estimate accurately.
+even though the variables are completely dependent. In contrast
+explicit calculation shows $I(X,Y)=1$. For real data, however, the
+mutual information can be difficult to estimate accurately.
 
 \section*{The data processing inequality}
 
@@ -450,7 +450,7 @@ and say $X$, $Y$, $Z$ are a Markov chain if
 p(x,z|y)=p(x|y)p(z|y)
 \end{equation}
 In other words, if you know $Y=y$ the conditional distributions of $X$
-and $Y$ are independent. The data processing inequality states that in
+and $Z$ are independent. The data processing inequality states that in
 this situation
 \begin{equation}
 I(X,Y)\ge I(X,Z)
