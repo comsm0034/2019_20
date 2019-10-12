@@ -12,14 +12,14 @@
 
 \section*{Differential entropy} 
 
-\textsl{Differential entropy} is the name given to Shannon's entropy for continuous probablity distributions; the definition is obvious:
+\textsl{Differential entropy} is the name given to Shannon's entropy for continuous probability distributions; the definition is obvious:
 \begin{equation}
   h(X)=-\int dx p(x)\log_2{p(x)}
 \end{equation}
 In other words the only change is to replace the sum over the discrete
 variable with an integral over the continuous one. We will see later
 however that the relationship between the two definitions, the one we
-saw before for discete distributions and this new definition for
+saw before for discrete distributions and this new definition for
 continuous distributions, isn't a straight forward as you might hope
 and so it makes sense to use a different symbol, in this case a small
 $h$ for the differential entropy.
@@ -32,7 +32,7 @@ It is easy to calculate the entropy to find
 \begin{equation}
   h(X)=\log{a}
 \end{equation}
-This immeadiately demonstrates a difference between differential
+This immediately demonstrates a difference between differential
 entropy and the entropy we looked at before for the discrete variable:
 if $a<1$ then $h(X)<0$ and so the differential entropy isn't always
 positive.
@@ -45,7 +45,7 @@ real values signal is used to communicate information there will be
 imprecision in both the encode and decoding, limiting the amount of
 information that can be carried by signal from the person encode the
 data to the person decoding it and so it is still useful to study
-continuous signals using the tooks of information theory.
+continuous signals using the tools of information theory.
 
 After the uniform distribution the first continuous distribution you
 think of is probably the Gaussian distribution
@@ -61,11 +61,11 @@ distribution, this formula can give a positive or negative number
 depending on the size of $\sigma$. Interestingly it can be proved that
 for fixed variance the Gaussian has the highest entropy.
 
-\subsection*{Relationship between the continuous and descrete entropy}
+\subsection*{Relationship between the continuous and discrete entropy}
 
 We have mentioned, even laboured, the idea that the differential
 entropy is not the same as the entropy; in this section we will
-explicitely work out the difference. Consider a probability density
+explicitly work out the difference. Consider a probability density
 $p(x)$; we can use this to define a discrete random variable by discretizing the support; let
 \begin{equation}
   y_n=[x_{n-1},x_n)
@@ -91,10 +91,10 @@ where $\bar{x}_n$ is any point in $[x_{n-1},x_n)$; as the subinterval
   for proving theorems, so we do something more elegant.
 
 Assuming $p(x)$ is continuous we know we can
-always pick a value of $\bar{x}_n\in[x_{n-1},x_n]$$ such that
+always pick a value of $\bar{x}_n\in[x_{n-1},x_n]$ such that
 \begin{equation}
   p(\bar{x}_n)\delta x=\int_{x_{n-1}}^{x_n}p(x)dx
-  \begin{equation}
+  \end{equation}
 exactly. This is an appliation of the Mean Value Theorem which says
 that for a continous function over an interval, there is point in the
 interval so that the value of the function is equal to its
@@ -130,9 +130,9 @@ we know
 \end{equation}
 Finally we are accustomed to the Riemann approximation
 \begin{equation}
-  \sum_n f(\tilde{x}_n) \delta x\rightarrow \int f(x)dx
+  \sum_n f(\tilde{x}_n) \delta x\rightarrow \int f(x)dx 
 \end{equation}
-as $\delta x\rightarrow 0$ where $\tilde{x)_n\in[x_{n-1},x_n)$ so we can see that
+as $\delta x\rightarrow 0$ where $\tilde{x}_n\in [x_{n-1},x_n)$ so we can see that
     \begin{equation}
       H(X^{\delta x})+\log_2{\delta x}\rightarrow h(X)
     \end{equation}
@@ -148,16 +148,16 @@ $\log{\delta x}$ which cancels this effect. The approximate formula is also inst
 \end{equation}
 If the support is finite, say of length $L$, with $N=L/\delta x$ the
 number of subintervals, then, approximately, the differential entropy
-has two componentsthe entropy: the entropy of the $N$-bit encoding of
+has two components the entropy: the entropy of the $N$-bit encoding of
 the result and another term corresponding to what remains after the
 $N$-bit encoding.
 
-\subsection*{Changes fo variable}
+\subsection*{Changes of variable}
 
 The probability density is a density: what this means is that it
 changes under a change of variable. This is easiest to see if go back to the definition:
 \begin{equation}
-  P(x\in[x_0,x_1))=\int__{x_0}^{x_1}p_X(x)dx
+  P(x\in[x_0,x_1))=\int_{x_0}^{x_1}p_X(x)dx
 \end{equation}
 Now what happens if we do a change of variable to $y(x)$; lets ignore
 any issues with multivaluedness of the inverse or whatever and assume
@@ -197,7 +197,52 @@ a specific example of; using $y=a x$ in this formula shows us that
   h(aX)=h(X)+\log{|a|}
 \end{equation}
 so the differential entropy is not invariant under scaling; this is
-something we observed whenw we calculated the differential entropy for
+something we observed when we calculated the differential entropy for
 the uniform distribution and the Gaussian.
+
+\subsection*{The differential mutual information}
+
+The differential mutual information is
+\begin{equation}
+  I(X,Y)=\int p(x,y)\log_2{\frac{p(x,y)}{p(x)p(y)}}
+\end{equation}
+and satisfies the same identities as the mutual information
+\begin{equation}
+  I(X,Y)=h(X)+h(Y)-h(X,Y)
+\end{equation}
+It has some advantages over the differential entropy; in particular it
+is invariant under changes of variable in $X$ and $Y$. We won't prove that here
+because we have only discussed the one dimensional differential
+entropy; in higher dimensions the role of the derivative factor is
+played by the Jacobian.  You can, however, see how the invariance
+works: the extra Jacobian factor that appears because of the change of
+variables cancels, or put another way, the fraction inside the log is
+not a density, it is a ratio of densities and the Jacobian factors
+cancel to give an ordinary function.
+
+In fact, the differential mutual information is the same as the mutual information in the sense that, using the notation above
+\begin{equation}
+  I(X^{\delta x},Y^{\delta y})\rightarrow I(X,Y)
+\end{equation}
+as $\delta x$ and $\delta y$ approach zero. Furthermore
+\begin{equation}
+  I(X,Y)\ge 0
+\end{equation}
+
+
+\subsection*{Applications of differential entropy}
+
+One of the glories of the entropy was its relationship to
+communication through the source coding theorem. At first it might
+appear that there is no analogous set of ideas for differential
+entropy since, in a sense, the amount of information encoded in the
+outcome of a continuous variable must be infinite, if read to infinite
+precision. However, of course, in real world communication nothing is
+read to infinite precision and there is a theory of communication
+using continuous signals which includes the signal noise and
+imprecision of signal transmission. We won't look at this here,
+interesting though it is and will consider the example of Infomax
+
+
 
 \end{document}
