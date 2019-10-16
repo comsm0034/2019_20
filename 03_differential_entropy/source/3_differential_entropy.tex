@@ -48,9 +48,9 @@ data to the person decoding it and so it is still useful to study
 continuous signals using the tools of information theory.
 
 After the uniform distribution the first continuous distribution you
-think of is probably the Gaussian distribution
+think of is probably the Gau{\ss}ian distribution
 \begin{equation}
-  p(x)=\frac{1}{\sqrt{2\pi \sigma^22}}exp\left(\frac{-x^2}{2\sigma^2}\right)
+  p(x)=\frac{1}{\sqrt{2\pi \sigma^2}}\exp\left(\frac{-x^2}{2\sigma^2}\right)
 \end{equation}
 Working out $h(X)$ is straightforward once you substitute and use integration by parts you find
 \begin{equation}
@@ -59,7 +59,7 @@ Working out $h(X)$ is straightforward once you substitute and use integration by
 where the $e$ is just the exponential $\exp{(1)}$. As with the uniform
 distribution, this formula can give a positive or negative number
 depending on the size of $\sigma$. Interestingly it can be proved that
-for fixed variance the Gaussian has the highest entropy.
+for fixed variance the Gau{\ss}ian has the highest entropy.
 
 \subsection*{Relationship between the continuous and discrete entropy}
 
@@ -163,7 +163,7 @@ Now what happens if we do a change of variable to $y(x)$; lets ignore
 any issues with multivaluedness of the inverse or whatever and assume
 $y$ is a strictly monotonic function of $x$ so
 \begin{equation}
-  dx=\|\frac{dx}{dy}\|dy
+  dx=\left|\frac{dx}{dy}\right|dy
 \end{equation}
 so if $y_0=y(x_0$ and $y_1=y(x_1)$ we have
 \begin{equation}
@@ -188,7 +188,7 @@ variables; in fact this behaviour is the definition of a density.
 
 This means that the differential entropy is not invariant under a change of variable; substituting in the formula above we can show
 \begin{equation}
-  h(Y)=h(X)+\int p_X(x) \log_2\left|\frac{dx}{dy}\right|
+  h(Y)=h(X)+\int p_X(x) \log_2\left|\frac{dx}{dy}\right|dx
 \end{equation}
 
 In fact this is a general statement of something we have already seen
@@ -198,7 +198,7 @@ a specific example of; using $y=a x$ in this formula shows us that
 \end{equation}
 so the differential entropy is not invariant under scaling; this is
 something we observed when we calculated the differential entropy for
-the uniform distribution and the Gaussian.
+the uniform distribution and the Gau{\ss}ian.
 
 \subsection*{The differential mutual information}
 
