@@ -4,20 +4,20 @@
 \usepackage{graphicx}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lfoot{\texttt{comsm0021.github.io}}
-\lhead{Neural Information Processing - 3\_infomax - Conor}
+\lfoot{\texttt{comsm0034.github.io}}
+\lhead{IP\&B - 4\_infomax - Conor}
 \rhead{\thepage}
 \cfoot{}
 \begin{document}
 
 \section*{Infomax}
 
-The second topic we will consider is the Infomax algorithm. This is a
-approach to unmixing mixed data proposed in \cite{BellSejnowski1995}
-and gives an in-principle explanation for how the brain might perform
-auditory source separation. In other words, it shows how source
-separation might be performed and indicates some of the ingredients
-that may be present in source separation in the brain.
+The second information theory example we will consider is the Infomax
+algorithm. This is a approach to unmixing mixed data proposed in
+\cite{BellSejnowski1995} and gives an in-principle explanation for how
+the brain might perform auditory source separation. In other words, it
+shows how source separation might be performed and indicates some of
+the ingredients that may be present in source separation in the brain.
 
 The problem is as follows: imagine you are in a crowded room, in the
 classic telling, at a cocktail party. Lots of people are talking, but
@@ -73,56 +73,18 @@ r}=M{\bf s}\stackrel{\mbox{unmixing}}{\longrightarrow}{\bf x}=W{\bf r}
 \end{equation}
 
 One difficulty with looking at this problem is that it involves
-continuous random variables, whereas the unit so far has
-concentrated on the discrete case: $s_1(t)$ and $s_2(t)$ are continuous
+continuous random variables, whereas the unit so far has concentrated
+on the discrete case: $s_1(t)$ and $s_2(t)$ are continuous
 variable. For this reason some of the results will just be quoted and
-any exam questions will reflect the difficulty of this topic.
-
-The main point with continuous random variables is that the
-probability distribution is now a density, so 
-\begin{equation}
-Pr(a<x<b)=\int_a^b p_X(x) dx 
-\end{equation} 
-with 
-\begin{equation}
-\int_{-\infty}^{\infty} p_X(x)=1 dx
-\end{equation} 
-An important difference is demonstrated by the following formula: if
-$Y=g(X)$ are two random variables related by an invertible function
-$g$ 
+any exam questions will reflect the difficulty of this topic. Recall that the
+information is defined in the same way as before
 \begin{equation} 
-p_Y(y)=\frac{p_X(x=g^{-1}(y))}{|g'(x)|}
-\end{equation}
-In other words, the probability at $y$, $p_Y(y)$, is not just the
-probability at the corresponding value of $x$, $p_X(g^{-1}(y))$, using
-$x=g^{-1}(y)$, there is an additional scaling factor given by $g'(x)$.
-
-To see roughly where this comes from, consider a simple scaling
-$Y=\lambda X$, now, to preserve the probabilities
-\begin{equation}
-\int_{\lambda a}^{\lambda b} p_Y(y)dy=\int_{a}^b p_X(x)dx
-\end{equation}
-but if you do a change of variables $y=\lambda x$ on the left hand side this give
-\begin{equation}
-\int_a^b p_Y(\lambda x)\lambda dx=\int_{a}^b p_X(x)dx
-\end{equation}
-Thus, if $y=\lambda x$ then $g'(x)=\lambda$ and
-\begin{equation}
-p_Y(y)=\frac{p_x(x)}{\lambda}
-\end{equation}
-
-The information is defined in the same way as before
-\begin{equation} 
-H(X)=-\int  p(x)\log{p(x)} dx 
+h(X)=-\int  p(x)\log{p(x)} dx 
 \end{equation} 
-but it is no longer always positive. Furthermore, by substituting from
-the formula above, you can see that
+but it is no longer always positive. Furthermore, we saw that
 \begin{equation} 
-H(\lambda X)=H(X)+\log{|\lambda|} 
+h(\lambda X)=h(X)+\log{|\lambda|} 
 \end{equation} 
-and so the entropy has no maximum or minimum: a similar idea is the
-maximization of entropy over distributions with the same variance and
-this would rule out the scaling we see in this formula.
 
 Now, the idea is to solve the problem by using the fact that $S_1$ and
 $S_2$ are independent: we just need to find $W$ so that $X_1$ and
@@ -155,17 +117,17 @@ needed. That something, of course, is to require $I(X_1,X_2)=0$ since
 this happens if and only if $X_1$ and $X_2$ are independent.
 
 The problem is that $I(X_1,X_2)$ is difficult to calculate: the idea
-behind infomax is to look at $H(X_1,X_2)$:
+behind infomax is to look at $h(X_1,X_2)$:
 \begin{equation}
-I(X_1,X_2)=H(X_1)+H(X_2)-H(X_1,X_2)
+I(X_1,X_2)=h(X_1)+h(X_2)-h(X_1,X_2)
 \end{equation}
-The idea is that maximizing the joint entropy, $H(X_1,X_2)$ will give
+The idea is that maximizing the joint entropy, $h(X_1,X_2)$ will give
 a minimum of the mutual information, in other words, the variations in
-the individual entropies $H(X_1)$ and $H(X_2)$ can be
+the individual entropies $h(X_1)$ and $h(X_2)$ can be
 ignored. However, as stated, this will not work because the entropy
 can be increased by a trivial scaling, $X_a\rightarrow \lambda X_a$,
-changes the joint entropy, $H(X_1,X_2)\rightarrow
-H(X_1,X_2)+\log{|\lambda|}$ so $H(X_1,X_2)$ can be made arbitrarily
+changes the joint entropy, $h(X_1,X_2)\rightarrow
+h(X_1,X_2)+\log{|\lambda|}$ so $h(X_1,X_2)$ can be made arbitrarily
 large by scaling, something that tells us nothing about mixing and
 unmixing. Inspired by the behaviour of neurons, in
 \cite{BellSejnowski1995} this is solved by adding a saturation
@@ -178,7 +140,7 @@ where $w_1$ and $w_2$ are parameters and, for example,
 \begin{equation}
 g(u)=\frac{1}{1+e^{-u}}
 \end{equation}
-so $g:(-\infty,\infty)\rightarrow (0,1)$.
+is a saturating non-linearity so $g:(-\infty,\infty)\rightarrow (0,1)$.
 \begin{equation}
 \epsfig{file=g.eps,width=4cm,angle=270}
 \end{equation}
@@ -192,9 +154,9 @@ For later notational convenience, let write
 y_a=g(x_a+w_a)=f(r_1,r_2;W,w_a)
 \end{equation}
 where $f$ is the function, parameterized by $W$ and $w_a$, mapping
-from the recording to $y$. So reason the saturating non-linearity will
+from the recording to $y$. The reason the saturating non-linearity will
 help is that with a non-linearity like this a large enough scaling
-will reduce the entropy: consider $H(g(\lambda X))$ where $\lambda$ is
+will reduce the entropy: consider $h(g(\lambda X))$ where $\lambda$ is
 a constant. If $\lambda$ is very large it will spread $X$ out so that
 it will take lots of very big positive or negative values; if $\lambda
 x$ is a big positive number then $g(\lambda x)$ will be near to one,
@@ -210,42 +172,42 @@ r\stackrel{\mbox{multiply}}{\longrightarrow}x=Wr\stackrel{\mbox{non-linearity}}{
 \end{equation}
 where $W$ and $w$ are now both scalars and $r$, $x$ and $y$ are
 outcomes for random variables $R$, $X$ and $Y$. We consider maximizing
-the entropy $H(Y)$. What does this do; well, it maximizes the
+the entropy $h(Y)$. What does this do; well, it maximizes the
 information in $Y$ about $R$:
 \begin{equation}
-I(R;Y)=H(Y)-H(Y|R)
+I(R;Y)=h(Y)-h(Y|R)
 \end{equation}
-but $H(Y|R)$ is constant since $R$ determines $Y$. In the discrete
-case we are familiar with this would be easy to discuss, $H(Y|R)$
+but $h(Y|R)$ is constant since $R$ determines $Y$. In the discrete
+case we are familiar with this would be easy to discuss, $h(Y|R)$
 would be zero, in the continuous case it is not that simple, it is
 actually minus infinity, but, the consequence is the same, it does not
-depend on $W$ and $w$. To maximize $H(Y)$ we need to calculate its
+depend on $W$ and $w$. To maximize $h(Y)$ we need to calculate its
 derivative with respect to the parameters $W$ and $w$; this is a
 feature of the algorithm, ultimately we need to calculate derivatives
 and these are calculable and well defined, even if the quantity being
 differentiated is not. In this case
 \begin{equation}
-H(Y)=-\int p(y)\log{p(y)} dy
+h(Y)=-\int p(y)\log{p(y)} dy
 \end{equation}
 and this is estimated by
 \begin{equation}
-\tilde{H}(y)=-\log{p(y)}
+\tilde{h}(y)=-\log{p(y)}
 \end{equation}
 In other words, if $n$ values $y_i$ is drawn from $Y$ then 
 \begin{equation}
-\frac{1}{n}\sum_i\tilde{H}(y_i)\rightarrow H(Y)
+\frac{1}{n}\sum_i\tilde{h}(y_i)\rightarrow h(Y)
 \end{equation}
 as $n$ gets large. 
 
 Of course we do not have $p_Y(y)$ and it would be difficult to
 estimate, but, it turns out we do not need it to get the derivative of
-$\tilde{H(y)}$. We have seen already that since $y=f(r;W,w)$
+$\tilde{h(y)}$. We have seen already that since $y=f(r;W,w)$
 \begin{equation}
 p_Y(y)=\frac{p_R[r=f^{-1}(y)]}{|f'(f^{-1}(y)|}
 \end{equation}
 so
 \begin{equation}
-\tilde{H}(y)=-\log{p_R(r)}+\log{|f'|}
+\tilde{h}(y)=-\log{p_R(r)}+\log{|f'|}
 \end{equation}
 and $p_R(r)$ is independent of the parameters. Now, for our choice of saturating non-linearity
 \begin{eqnarray}
@@ -267,21 +229,21 @@ so
 \end{equation}
 and hence, 
 \begin{equation}
-\frac{d\tilde{H}(y)}{dW}=\frac{1}{W}+\frac{1}{f}rf(1-f)-\frac{1}{1-f}rf(1-f)=\frac{1}{W}+r(1-2y)
+\frac{d\tilde{h}(y)}{dW}=\frac{1}{W}+\frac{1}{f}rf(1-f)-\frac{1}{1-f}rf(1-f)=\frac{1}{W}+r(1-2y)
 \end{equation}
 Similarly
 \begin{equation}
-\frac{d\tilde{H}(y)}{dw}=1-2y
+\frac{d\tilde{h}(y)}{dw}=1-2y
 \end{equation}
 These quantities: $s$, $y$ and, of course, $W$, are numbers we have
 access to, $W$ is a parameter, $s$ is the signal, we can sample $s(t)$
 at a set of times to get a set of $s$'s and $y$ is a function of
 $s$. This means we can estimate these derivatives, giving the gradient
-of $H$ at a point $(W,w)$ in the parameter space. This is a common
+of $h$ at a point $(W,w)$ in the parameter space. This is a common
 situation in numerical optimization, we don't know the function and,
 here, it isn't even so easy to define, but we do know its
 gradient. This means that locally we know which direction brings us in
-the direction of greater $H$ and so numerical hill-climbing routines
+the direction of greater $h$ and so numerical hill-climbing routines
 can be used, these are well described in, for example,
 \cite{PressEtAl2007}: steepest ascent, conjugate gradient or metric
 gradient methods work well here.\footnote{The metric method uses a
@@ -323,28 +285,23 @@ Now, back to the two-to-two case:
 \begin{equation}
 {\bf s}\stackrel{\mbox{mixing}}{\longrightarrow}{\bf r}=M{\bf s}\stackrel{\mbox{unmixing}}{\longrightarrow}{\bf x}=W{\bf r}\stackrel{\mbox{non-linearity}}{\longrightarrow}{\bf y}:\,y_a=g(x_a+w_a)
 \end{equation}
-and here we want to maximize $H(Y_1,Y_2)$; the idea being that this
+and here we want to maximize $h(Y_1,Y_2)$; the idea being that this
 should find a matrix $W$ whose eigen-directions give statistically
 independent $Y_a$, this is the bit we want since it will also make the
 $X_a$ independent, and whose eigenvalues, along with the values of
-$w_a$ make $H(Y_1)$ big by lining the saturating non-linearity up with
+$w_a$ make $h(Y_1)$ big by lining the saturating non-linearity up with
 the underlying distributions: the orientation of $W$ deals with the
 unmixing, the scale of $W$ and the vector of $w_a$s deals with the
 one-to-one part. Anyway, doing the calculation gives 
 \begin{eqnarray}
-\frac{d\tilde{H}(y)}{dW_{ab}}&=&(W^T)^{-1}_{ab}+r_a(1-2y_b)\cr
-\frac{d\tilde{H}(y)}{dw_a}&=&1-2y_a
+\frac{d\tilde{h}(y)}{dW_{ab}}&=&(W^T)^{-1}_{ab}+r_a(1-2y_b)\cr
+\frac{d\tilde{h}(y)}{dw_a}&=&1-2y_a
 \end{eqnarray}
-allowing the maximum of $H(Y_1,Y_2)$ to be, hopefully, found and this,
+allowing the maximum of $h(Y_1,Y_2)$ to be, hopefully, found and this,
 again, hopefully, will unmix the signal. Note that this algorithm is
 not as blind as we might of hoped, the non-linearity needs to be
 chosen judiciously: however, the algorithm is reasonably robust;
 reasonably successful and certainly interesting mathematically.
-
-
-
-
-
 
 \bibliographystyle{apa}
 \bibliography{../../source/bibliography}{}
