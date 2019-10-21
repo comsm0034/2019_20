@@ -28,7 +28,7 @@ noises are, the noise of voices on the street, other people coughing
 and clearing their throats, the sound of wind through nearby
 trees. All these are sounds we automatically filter out when
 listening. This process of picking out individual sources of sound
-from a mixture of sounds is called auditory source separation, or, the
+from a mixture of sounds is called auditory source separation and the
 question of how to do this is called the cocktail party problem. In
 fact, the problem is much more general than auditory source
 separation; the same techniques should apply to any problem where we
@@ -45,7 +45,7 @@ The problem can be phrased like this, given the sources
 $\textbf{s}(t)$ where $\textbf{s}$ is a vector over multiple
 sources. Now we do source separation with only two recordings, one for
 each ear; here we are just going to consider the simpler problem of
-source separation when there are as many recordings are as there are
+source separation when there are as many recordings as there are
 sources, we also assume the mixing is linear and instantaneous, real
 mixing of auditory signals in a room will only have these properties
 approximately. However, given these assumption we have
@@ -145,7 +145,7 @@ is a saturating non-linearity so $g:(-\infty,\infty)\rightarrow (0,1)$.
 \epsfig{file=g.eps,width=4cm,angle=270}
 \end{equation}
 
-Now we have
+Now we have\footnote{In broadcast notation $\mathbf{y}=g.(\mathbf{x}+\mathbf{w})$.}
 \begin{equation}
 {\bf s}\stackrel{\mbox{mixing}}{\longrightarrow}{\bf r}=M{\bf s}\stackrel{\mbox{unmixing}}{\longrightarrow}{\bf x}=W{\bf r}\stackrel{\mbox{non-linearity}}{\longrightarrow}{\bf y}:\,y_a=g(x_a+w_a)
 \end{equation}
@@ -193,7 +193,7 @@ and this is estimated by
 \begin{equation}
 \tilde{h}(y)=-\log{p(y)}
 \end{equation}
-In other words, if $n$ values $y_i$ is drawn from $Y$ then 
+In other words, if $n$ values of $y_i$ are drawn from $Y$ then 
 \begin{equation}
 \frac{1}{n}\sum_i\tilde{h}(y_i)\rightarrow h(Y)
 \end{equation}
@@ -267,19 +267,19 @@ distribution of $R$ then infomax will find the $W$ and $w$ that line
 everything up so that $Y$ will have something close to an even
 distribution. Here is an example:
 \begin{eqnarray}
-a)\epsfig{file=pr.eps,width=5cm,angle=270}&&b)\epsfig{file=pu.eps,width=5cm,angle=270}\cr
-d)\epsfig{file=y.eps,width=5cm,angle=270}&&c)\epsfig{file=g.eps,width=5cm,angle=270}
+\textbf{A}\epsfig{file=pr.eps,width=5cm,angle=270}&&\textbf{B}\epsfig{file=pu.eps,width=5cm,angle=270}\cr
+\textbf{D}\epsfig{file=y.eps,width=5cm,angle=270}&&\textbf{C}\epsfig{file=g.eps,width=5cm,angle=270}
 \end{eqnarray}
-Figure a) shows an initial distribution 
+Figure \textbf{A} shows an initial distribution 
 \begin{equation}
 p_R(r)=\frac{1}{\sqrt{10\pi}}e^{(r-3)^2/10}
 \end{equation}
-b) is a new distribution arrived at by shifting a rescaling $r$ using $W$ and $w$:
+\textbf{B} is a new distribution arrived at by shifting a rescaling $r$ using $W$ and $w$:
 \begin{equation}
 p_U(u)=\frac{1}{\sqrt{4.5\pi}}e^{u^2/4.5}
 \end{equation}
 where $u=Wr+w$. Now, this distribution is all lined up with the
-rectifying non-linearity c) so that $p_Y(y)$ where $y=g(u)$ is d).
+rectifying non-linearity \textbf{C} so that $p_Y(y)$ where $y=g(u)$ is \textbf{D}.
 
 Now, back to the two-to-two case: 
 \begin{equation}
