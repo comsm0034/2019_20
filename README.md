@@ -47,7 +47,7 @@ Machine/statistical Learning:
 
 #### Rui (weeks 6-10): Neural circuits and learning
 
-##### Office hours: Tuesdays 12-2pm
+##### Office hours: Tuesdays 12-2pm @ 3.26 MVB
 
 * Lecture 11: Different forms of learning (1,4)
 * Lecture 12: Visual System: deep learning? (5,6)
