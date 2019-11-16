@@ -1,0 +1,75 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, epsfig}
+\usepackage[authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{slashbox}
+\pagestyle{fancy}
+\lfoot{\texttt{comsm0034.github.io}}
+\lhead{IP\&B Worksheet - Conor}
+\rhead{\thepage}
+\cfoot{}
+\begin{document}
+
+\section*{Worksheet} 
+
+This problem are taken from the excellent text book Cover and Thomas
+and is not for submission. It is actually hard to find reasonably
+doable questions on differential entropy and these would be hard to
+get done in time in an exam.
+
+\subsection*{Q1 - differential entropy}
+
+What is the entropy of $X_1+X_2$ where $X_1$ and $X_2$ are independent normal variables with means $\mu_i$ and variances $\sigma_i^2$?
+
+
+
+\subsection*{Q2 - channel capacity}
+
+If $Z=X+Y$ where $X$ is uniform on $[-1/2,1/2]$ and $Y$ is independent of $X$ and uniform on $[-a/2,a/2]$ with $a<1$, what is $I(X;Z)$ as a function of $a$?
+
+\newpage
+
+\subsection*{Q1 - outline solution}
+
+You can use the convolution,
+\begin{equation}
+  p_Z(z)=\int_{-\infty}^\infty p_X(x)p_Y(z-x)dx
+\end{equation}
+for $Z=X+Y$, to show that the sum of two Gaussians gives another Gaussian with $\mu=\mu_1+\mu_2$ and $\sigma^2=\sigma_1^2+\sigma_2^2$; you can then apply the usual formula for the entropy of a Gaussian:
+\begin{equation}
+  h(X_1+X_2)=\frac{1}{2}\log{2\pi e \sigma^2}
+\end{equation}
+
+\subsection*{Q2 - outline solution}
+
+So for a random variable uniform on a region of width $a$, say $[y_0,y_0+a]$
+\begin{equation}
+  h(Y)=-\frac{1}{a}\int_{y_0}^{y_o+a}\log{\frac{1}{a}}dy=\log{a}
+\end{equation}
+Now working out $p_Z(z)$ is harder because, again using the convolution theorem we get
+\begin{equation}
+  p_Z(z)=\left\{\begin{array}{ll}
+  \frac{1}{2a}\left(z+\frac{1+a}{2}\right)&-\frac{1+a}{2}<z<-\frac{1-a}{2}\\
+  1                                       &-\frac{1-a}{2}<z<\frac{1-a}{2}\\
+  \frac{1}{2a}\left(-z-\frac{1+a}{2}\right)&\frac{1-a}{2}<z<\frac{1+a}{2}\\
+  0&\mbox{otherwise}
+  \end{array}\right.
+\end{equation}
+This would allow $h(Z)$ to be calculated by splitting up the integral and doing the relevant integrations by parts. This gives
+\begin{equation}
+  h(Z)=\frac{a}{2}
+\end{equation}
+Finally if $X$ is fixed $Z$ is just the uniform distribution so
+\begin{equation}
+  h(Z|X)=\log{a}
+\end{equation}
+and hence
+\begin{equation}
+  I(Z;X)=h(Z)-h(Z|X)=\frac{a}{2}-\log{a}
+\end{equation}
+
+
+
+\end{document}
+
