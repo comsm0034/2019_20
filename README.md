@@ -47,13 +47,15 @@ Machine/statistical Learning:
 
 #### Rui (weeks 6-10): Neural circuits and learning
 
-* Lecture 11: Different forms of learning (1,4)
-* Lecture 12: Visual System: deep learning? (5,6)
-* Lecture 13: Supervised learning and backprop (1,4)
-* Lecture 14: Unsupervised learning (5,6)
-* Lecture 15: Reinforcement Learning (1,7)
-* Lectures 16-17: Recurrent neural networks (1,4)
-* Lecture 18: Brain vs machine: meta-learning and inductive bias (1,4)
+##### Office hours: Tuesdays 12-2pm @ 3.26 MVB
+
+* Lecture 11: Different forms of learning
+* Lecture 12: Visual System: deep learning?
+* Lecture 13: Supervised learning and backprop
+* Lecture 14: Unsupervised learning
+* Lecture 15: Reinforcement Learning
+* Lectures 16-17: Recurrent neural networks
+* Lecture 18: Brain vs machine: meta-learning and inductive bias
 
 Note: Labs for CW2 on weeks 7 and 10 will start with lecture in the first hour.
 
