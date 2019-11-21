@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, epsfig}
+\usepackage[authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{slashbox}
+\pagestyle{fancy}
+\lfoot{\texttt{comsm0034.github.io}}
+\lhead{IP\&B Worksheet - Conor}
+\rhead{\thepage}
+\cfoot{}
+\begin{document}
+
+\section*{Worksheet} 
+
+\subsection*{Q1 - marginal and conditional distributions}
+
+Work out the marginal probability distributions and the $x=a$
+conditional probability distribution $P(Y|X=a)$ for
+\begin{center}
+\begin{tabular}{c|cc}
+\backslashbox{$Y$}{$X$}&$a$&$b$\\
+\hline
+1&$\frac{1}{16}$&$\frac{1}{2}$\\
+2&0&$\frac{1}{4}$\\
+3&$\frac{1}{16}$&$\frac{1}{8}$
+\end{tabular}
+\end{center}
+
+\subsubsection*{Solution}
+
+The marginal distributions come from summing the rows or columns so
+\begin{center}
+\begin{tabular}{c|cc}
+$X$&$a$&$b$\\
+\hline
+&$\frac{1}{8}$&$\frac{7}{8}$
+\end{tabular}
+\end{center}
+and
+\begin{center}
+\begin{tabular}{c|ccc}
+$Y$&$1$&$2$&$3$\\
+\hline
+&$\frac{9}{16}$&$\frac{1}{4}$&$\frac{3}{16}$
+\end{tabular}
+\end{center}
+Finally, $P(X=a)=1/8$ so
+\begin{center}
+\begin{tabular}{c|ccc}
+$Y|X=a$&$1$&$2$&$3$\\
+\hline
+&$\frac{1}{2}$&$0$&$\frac{1}{2}$
+\end{tabular}
+\end{center}
+
+
+
+\subsection*{Q2 - working out entropy}
+
+For the above distribution work out $H(X)$, $H(Y)$, $H(X|Y)$,
+$H(Y|X)$, $H(X,Y)$, $H(Y)-H(Y|X)$ and $I(X;Y)$.
+
+\subsubsection*{Solution}
+
+So all that happens here, again and again, is that you need to work out something like
+\begin{equation}
+  H(X)=-\sum_i p_i\log{p_i}
+\end{equation}
+So
+\begin{equation}
+  H(X)=-\frac{1]{8}\log{\frac{1}{8}}-\frac{7}{8}\log{\frac{7}{8}}\approx 0.544
+\end{equation}
+and
+\begin{equation}
+H(Y)=-\frac{9}{16}\log{\frac{9}{16}}-\frac{1}{4}\log{\frac{1}{4}}-\frac{3}{16}\log{\frac{3}{16}}\approx 1.42
+\end{equation}
+and
+\begin{equation}
+  H(X,Y)=-\frac{1}{16}\log{\frac{1}{16}}-\frac{1}{2}\log{\frac{1}{2}}-\frac{1}{4}\log{\frac{1}{4}}-\frac{1}{16}\log{\frac{1}{16}}-\frac{1}{8}\log{\frac{1}{8}} = 1.875
+\end{equation}
+
+
+\subsection*{Q3 - working out entropy}
+
+The World Series is a competition held each year in North America
+between two baseball teams. The series consists of between four and
+seven games, terminating if either team wins four games. Thus, the set
+of outcomes includes sequences like AAAA, ABAAA and ABABABA. Let $X$
+be the random variable representing the outcome and $Y$ the number of
+games played. Assuming the teams are equally matched and the games are
+independent, what are $H(X)$, $H(Y)$, $H(X|Y)$ and $H(Y|X)$?
+
+\subsection*{Q4 - the average entropy}
+
+Work out the average entropy for the distribution with two events
+$\{x_1,x_2\}$ and $p(x_1)=p$ and $p(x_2)=1-p$ under the assumption
+that each value of $p$ is equally likely.
+
+\subsubsection*{Solution}
+
+So $H(p)=-p\log{p}-(1-p)\log{1-p}$ so to get get average entropy we need
+\begin{equation}
+\langle H\rangle_p =  \int_0^1 H(p)dp=-\int_0^1 p\log{p}dp -\int_0^1 (1-p)\log{(1-p)}dp
+\end{equation}
+Given that the choice of which probability to call $p$ and which to call $1-p$ is arbitrary you might expect 
+\begin{equation}
+  \int_0^1 p\log{p}dp =\int_0^1 (1-p)\log{(1-p)}dp
+\end{equation}
+and this is easy to check by substituting $q=1-p$. Hence
+\begin{equation}
+  \langle H\rangle_p =-2\int_0^1 p\log{p}dp
+\end{equation}
+To make the integration easier lets use the entropy measured in nats:
+\begin{equation}
+  \langle H_e\rangle_p =-2\int_0^1 p\ln{p}dp
+\end{equation}
+It is easy to convert back since $\log{p}=\ln{p}/\ln{2}$. Now use integration by parts with $u=\log{p}$ and $dv=pdp$ so
+\begin{equation}
+  \int_0^1 p\ln{p}dp=\frac{p^2}{2}\ln{p}]_0^1-\int_0^1\frac{p^2}{2}\frac{1}{p}dp=-\left.\frac{p^2}{4}\right_0^1=-\frac{1}{4}
+\end{equation}
+and hence
+\begin{equation}
+  \langle H\rangle_p =\frac{1}{2\ln{2}}\approx 0.72
+\end{equation}
+
+
+
+\subsection*{Q5 - Bias in estimating information}
+
+Estimating entropy is hard; worse, the obvious estimator
+\begin{equation}
+  H(X)=-\sum_x \tilde{p}(x)\log_2\tilde{p}(x)
+\end{equation}
+where
+\begin{equation}
+  \tilde{p}(x)=\frac{\#(\mbox{trials giving }x)}{\mbox{total trials}}
+\end{equation}
+is biased. Write a short programme to graph this for eight equally
+likely outcomes. In this case the entropy should be three but you
+should simulate estimating the entropy from $n$ trials; in other words, pick from the eight items $n$ times, calculate $\tilde{p}$ and estimate $H(X)$; do this multiple times for each $n$ and plot the estimated entropy against $n$. Does Laplace smoothing help; Laplace smoothing is an alternative estimator for the probability
+\begin{equation}
+  \tilde{p}_\alpha(x)=\frac{\#(\mbox{trials giving }x)+\alpha}{\mbox{total trials}+d\alpha}
+\end{equation}
+where $d$ is the number of outcomes, eight in our case, and $\alpha$
+is a parameter usually taken as lying between zero and one. Try this a
+a few value of $\alpha$, for example $0.25$, $0.5$ and $1.0$.
+
+\subsection*{Q6 - A question about information in the brain}
+
+Answer just one of these two questions, each is worth equal marks but the
+second is much harder than the first, so you'd be better off doing the
+first unless you are particularly interested in this topic. Both papers are available in the paper repository in the github.
+
+\begin{enumerate}
+\item The original idea of estimating neural information by binning
+  spike trains was spread across several papers, but one of the main
+  references is \cite{StrongEtAl1998}. One aspect of this paper we
+  didn't discuss is the use of extrapolation to estimate the
+  information as the number of samples becomes large based on the
+  behaviour for smaller numbers of samples. Can you give a short, up
+  to five lines, summary of what this involves.
+
+\item In \cite{NemenmanEtAl2004} there is a deep commentary on how
+  information in neural data is computed. This is a very difficult
+  paper and the mathematics towards the end is hard. The aim of this
+  question is to read the paper and offer a three or four line overall
+  summary of what the paper is trying to do.
+\end{enumerate}
+
+\bibliographystyle{apa}
+\bibliography{../../source/bibliography}{}
+
+\end{document}
+
