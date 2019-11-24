@@ -69,7 +69,7 @@ So all that happens here, again and again, is that you need to work out somethin
 \end{equation}
 So
 \begin{equation}
-  H(X)=-\frac{1]{8}\log{\frac{1}{8}}-\frac{7}{8}\log{\frac{7}{8}}\approx 0.544
+  H(X)=-\frac{1}{8}\log{\frac{1}{8}}-\frac{7}{8}\log{\frac{7}{8}}\approx 0.544
 \end{equation}
 and
 \begin{equation}
@@ -80,6 +80,43 @@ and
   H(X,Y)=-\frac{1}{16}\log{\frac{1}{16}}-\frac{1}{2}\log{\frac{1}{2}}-\frac{1}{4}\log{\frac{1}{4}}-\frac{1}{16}\log{\frac{1}{16}}-\frac{1}{8}\log{\frac{1}{8}} = 1.875
 \end{equation}
 
+The conditional distributions are more complicated to calculate since we need to work out one for each condition:
+\begin{equation}
+  H(Y|X=a)=-\frac{1}{2}\log{\frac{1}{2}}-\frac{1}{2}\log{\frac{1}{2}}=1
+\end{equation}
+and
+\begin{equation}
+  H(Y|X=b)=-\frac{4}{7}\log{\frac{4}{7}}-\frac{2}{7}\log{\frac{2}{7}}-\frac{1}{7}\log{\frac{1}{7}}\approx 1.38
+\end{equation}
+so
+\begin{equation}
+  H(Y|X)\approx\frac{1}{8}+\frac{7}{8}1.38\approx 1.33
+\end{equation}
+and
+\begin{equation}
+  H(X|Y=1)=-\frac{1}{9}\log{\frac{1}{9}}-\frac{8}{9}\log{\frac{8}{9}}\approx 0.50
+\end{equation}
+and
+\begin{equation}
+  H(X|Y=2)=0
+\end{equation}
+and
+\begin{equation}
+  H(X|Y=3)=-\frac{1}{3}\log{\frac{1}{3}}-\frac{2}{3}\log{\frac{2}{3}}\approx 0.92
+\end{equation}
+which together tells us
+\begin{equation}
+  H(X|Y)\approx\frac{9}{16}0.5+\frac{3}{16}0.92\approx 0.45
+\end{equation}
+
+Finally
+\begin{equation}
+  H(Y)-H(Y|X)\approx 1.42-1.33 = 0.09
+\end{equation}
+and this should be equal $I(X;Y)$; we could work this out another way using
+\begin{equation}
+  I(X;Y)=H(X)+H(Y)-H(X,Y)\approx 1.33+0.54-1.87=0.09
+\end{equation}
 
 \subsection*{Q3 - working out entropy}
 
@@ -90,6 +127,40 @@ of outcomes includes sequences like AAAA, ABAAA and ABABABA. Let $X$
 be the random variable representing the outcome and $Y$ the number of
 games played. Assuming the teams are equally matched and the games are
 independent, what are $H(X)$, $H(Y)$, $H(X|Y)$ and $H(Y|X)$?
+
+\subsubsection*{Solution}
+
+So if the two teams are equally matched then the four game series each
+have probability $1/2^4$; the five series $1/2^5$ and so on. There are
+two four game series, $\{AAAA\}$ and $\{BBBB\}$, for five games there
+are four choose one series for each of an $A$ and $B$ victory because
+the last game has to be the fourth by the winning team, for six games
+there are two times five choose two, and so on.
+
+This gives us a table:
+\begin{center}
+  \begin{tabular}{l|ccc}
+games&probability per series&number of series&total probability\\[7pt]
+4& $\frac{1}{16}$  &2& $\frac{1}{8}$ \\[7pt]
+5& $\frac{1}{32}$  &8& $\frac{1}{4}$ \\[7pt]
+6& $\frac{1}{64}$  &20&$\frac{5}{16}$\\[7pt]
+7& $\frac{1}{128}$ &40&$\frac{5}{16}$
+  \end{tabular}
+\end{center}
+and hence
+\begin{equation}
+  H(Y)=-\frac{1}{8}\log{\frac{1}{8}}-\frac{1}{4}\log{\frac{1}{4}}-\frac{5}{16}\log{\frac{5}{16}}-\frac{5}{16}\log{\frac{5}{16}}\approx 1.92
+\end{equation}
+whereas for $X$ you need to add all outcomes: 
+\begin{equation}
+  H(X)=\frac{1}{8}4+\frac{1}{4}5+\frac{5}{16}6+\frac{5}{16}7\approx 5.82
+\end{equation}
+Now $H(Y|X)=0$ since the outcome determines the series length, the
+other way around is more complicated. For each series length all
+outcomes are equally likely so the entropy equals the number of elements, hence
+\begin{equation}
+  H(X|Y)=\frac{1}{8}\log{2}+\frac{1}{4}\log{8}+\frac{5}{16}\log{20}+\frac{5}{16}\log{40}\approx 3.89
+\end{equation}
 
 \subsection*{Q4 - the average entropy}
 
@@ -117,7 +188,7 @@ To make the integration easier lets use the entropy measured in nats:
 \end{equation}
 It is easy to convert back since $\log{p}=\ln{p}/\ln{2}$. Now use integration by parts with $u=\log{p}$ and $dv=pdp$ so
 \begin{equation}
-  \int_0^1 p\ln{p}dp=\frac{p^2}{2}\ln{p}]_0^1-\int_0^1\frac{p^2}{2}\frac{1}{p}dp=-\left.\frac{p^2}{4}\right_0^1=-\frac{1}{4}
+  \int_0^1 p\ln{p}dp=\frac{p^2}{2}\ln{p}]_0^1-\int_0^1\frac{p^2}{2}\frac{1}{p}dp=-\left.\frac{p^2}{4}\right]_0^1=-\frac{1}{4}
 \end{equation}
 and hence
 \begin{equation}
@@ -125,51 +196,6 @@ and hence
 \end{equation}
 
 
-
-\subsection*{Q5 - Bias in estimating information}
-
-Estimating entropy is hard; worse, the obvious estimator
-\begin{equation}
-  H(X)=-\sum_x \tilde{p}(x)\log_2\tilde{p}(x)
-\end{equation}
-where
-\begin{equation}
-  \tilde{p}(x)=\frac{\#(\mbox{trials giving }x)}{\mbox{total trials}}
-\end{equation}
-is biased. Write a short programme to graph this for eight equally
-likely outcomes. In this case the entropy should be three but you
-should simulate estimating the entropy from $n$ trials; in other words, pick from the eight items $n$ times, calculate $\tilde{p}$ and estimate $H(X)$; do this multiple times for each $n$ and plot the estimated entropy against $n$. Does Laplace smoothing help; Laplace smoothing is an alternative estimator for the probability
-\begin{equation}
-  \tilde{p}_\alpha(x)=\frac{\#(\mbox{trials giving }x)+\alpha}{\mbox{total trials}+d\alpha}
-\end{equation}
-where $d$ is the number of outcomes, eight in our case, and $\alpha$
-is a parameter usually taken as lying between zero and one. Try this a
-a few value of $\alpha$, for example $0.25$, $0.5$ and $1.0$.
-
-\subsection*{Q6 - A question about information in the brain}
-
-Answer just one of these two questions, each is worth equal marks but the
-second is much harder than the first, so you'd be better off doing the
-first unless you are particularly interested in this topic. Both papers are available in the paper repository in the github.
-
-\begin{enumerate}
-\item The original idea of estimating neural information by binning
-  spike trains was spread across several papers, but one of the main
-  references is \cite{StrongEtAl1998}. One aspect of this paper we
-  didn't discuss is the use of extrapolation to estimate the
-  information as the number of samples becomes large based on the
-  behaviour for smaller numbers of samples. Can you give a short, up
-  to five lines, summary of what this involves.
-
-\item In \cite{NemenmanEtAl2004} there is a deep commentary on how
-  information in neural data is computed. This is a very difficult
-  paper and the mathematics towards the end is hard. The aim of this
-  question is to read the paper and offer a three or four line overall
-  summary of what the paper is trying to do.
-\end{enumerate}
-
-\bibliographystyle{apa}
-\bibliography{../../source/bibliography}{}
 
 \end{document}
 
