@@ -58,6 +58,7 @@ Machine/statistical Learning:
 * Lecture 17: RNNs and Brain vs machine
 
 Note: Labs for CW2 on weeks 7 will start with lecture in the first hour.
+
 Note2: There *wont* be a lecture during the lab on week 10 so that you can focus on CW2.
 
 #### Cian (week 11):
