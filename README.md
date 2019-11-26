@@ -65,7 +65,7 @@ Note2: There *wont* be a lecture during the lab on week 10 so that you can focus
 
 * Lectures 18-19: Neural Data Analysis
 
-#### Revision week:
+#### Revision week (week 12):
 
 * Lecture 20: Conor's revision
 * Lecture 21: Rui/Cian revision
