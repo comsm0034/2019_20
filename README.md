@@ -54,7 +54,7 @@ Machine/statistical Learning:
 * Lecture 13: Supervised learning and backprop
 * Lecture 14: Unsupervised learning
 * Lecture 15: Reinforcement Learning
-* Lectures 16: Recurrent neural networks
+* Lecture 16: Recurrent neural networks
 * Lecture 17: RNNs and Brain vs machine
 
 Note: Labs for CW2 on weeks 7 will start with lecture in the first hour.
