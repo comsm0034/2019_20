@@ -54,19 +54,21 @@ Machine/statistical Learning:
 * Lecture 13: Supervised learning and backprop
 * Lecture 14: Unsupervised learning
 * Lecture 15: Reinforcement Learning
-* Lectures 16-17: Recurrent neural networks
-* Lecture 18: Brain vs machine: meta-learning and inductive bias
+* Lecture 16: Recurrent neural networks
+* Lecture 17: RNNs and Brain vs machine
 
-Note: Labs for CW2 on weeks 7 and 10 will start with lecture in the first hour.
+Note: Labs for CW2 on weeks 7 will start with lecture in the first hour.
+
+Note2: There *wont* be a lecture during the lab on week 10 so that you can focus on CW2.
 
 #### Cian (week 11):
 
-* Lectures 19-20: Neural Data Analysis
+* Lectures 18-19: Neural Data Analysis
 
-#### Revision week:
+#### Revision week (week 12):
 
-* Lecture 21: Conor's revision
-* Lecture 22: Rui/Cian revision
+* Lecture 20: Conor's revision
+* Lecture 21: Rui/Cian revision
 
 #### Coursework:
 
