@@ -47,12 +47,12 @@ So for a random variable uniform on a region of width $a$, say $[y_0,y_0+a]$
 \begin{equation}
   h(Y)=-\frac{1}{a}\int_{y_0}^{y_o+a}\log{\frac{1}{a}}dy=\log{a}
 \end{equation}
-Now working out $p_Z(z)$ is harder because, again using the convolution theorem we get
+Now working out $p_Z(z)$ is harder because, again using the convolution we get
 \begin{equation}
   p_Z(z)=\left\{\begin{array}{ll}
-  \frac{1}{2a}\left(z+\frac{1+a}{2}\right)&-\frac{1+a}{2}<z<-\frac{1-a}{2}\\
+  \frac{1}{a}\left(z+\frac{1+a}{2}\right)&-\frac{1+a}{2}<z<-\frac{1-a}{2}\\
   1                                       &-\frac{1-a}{2}<z<\frac{1-a}{2}\\
-  \frac{1}{2a}\left(-z-\frac{1+a}{2}\right)&\frac{1-a}{2}<z<\frac{1+a}{2}\\
+  \frac{1}{a}\left(-z+\frac{1+a}{2}\right)&\frac{1-a}{2}<z<\frac{1+a}{2}\\
   0&\mbox{otherwise}
   \end{array}\right.
 \end{equation}
