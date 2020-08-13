@@ -1,0 +1,59 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts, epsfig}
+\usepackage[authoryear]{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lfoot{\texttt{comsm0034.github.io}}
+\lhead{IP\&B Coursework - Conor / Rui}
+\rhead{\thepage}
+\cfoot{}
+\begin{document}
+
+\section*{Information Processing and the Brain} 
+
+For this course work you are asked to implement and explore the
+behaviour of a classical supervised learning algorithm and discuss how
+it relate to learning in the brain. You only need to select one of the
+topics below​. You can choose your language of preference, but we would
+recommend using Python or Matlab. There are two parts to the
+coursework, the first requires you to implement backpropagation and
+the second, more speculative part, asks you to test a simplification
+of this algorithm which would make it more biologicaly plausible. Each
+part is worth half the marks.
+
+The backpropagation algorithm is often used in machine learning to
+solve the credit assignment problem. Please implement a simple
+feedforward network with one hidden layer and sigmoidal units to
+analysis the widely used handwritten digit recognition dataset
+(MNIST); you may use autograd to achieve this. You are welcome to use
+code from stardard examples in your implementation; you should write a
+paragraph describing your approach and a graph or table quantifying
+the performance of the algorithm.
+
+Straightforard attempts to argue that deep learning resembles neuronal
+computation flounder because back-propagation requires that
+information about the behavious of later layers is required to
+determine learning in earlier layers. In this unit we have examined
+some ways this problem can be avoided. However, a counter proposal
+could hypothesis that learning does not need to occur in earlier
+layers. According to this hypothesis the role of the earlier layers is
+to provide a `dictionary' of recodings of the input which the final
+layer can select from. The second part of this course work is to test
+this idea: it seems unlikely to be true but if it was it would be easy
+to suggest biological mechanisms to support this sort of learning.
+
+One approach would be to train the network in the normal way and to
+then shuffle the weights connecting the input layer to the middle
+layer before retraining the network, this time only updating the
+weights that go from the middle layer to the output layer. How does
+this compare to the original? Who does this compare to a network
+without a hidden layer?
+
+Please email conor.houghton@bristol.ac.uk and rui.costa@bristol.ac.uk
+with a pdf report of no more than one page.
+
+
+
+\end{document}
+
